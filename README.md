@@ -45,4 +45,4 @@ Para ejecutarlo de forma correcta:
 
 ## 🌐 Enlace al sitio publicado
 Puedes visualizar la aplicación funcionando en línea en el siguiente enlace:
-* **URL de despliegue:** [Insertar link de Netlify / GitHub Pages aquí]
+* **URL de despliegue:** [https://gervasio-ernst.github.io/UX-UI-Tp-5/]
