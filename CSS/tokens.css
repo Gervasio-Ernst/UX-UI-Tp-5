@@ -1,0 +1,6 @@
+/* css/tokens.css */
+:root {
+  --primary: #4F46E5;       /* indigo-600 */
+  --primary-foreground: #FFFFFF;
+  --radius: 0.75rem;
+}

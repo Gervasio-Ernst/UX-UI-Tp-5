@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cubrí Seguros - Contratación Digital</title>
+  
+  <!-- Basecoat UI (estilos de componentes) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
+  
+  <!-- Tailwind v4 en el navegador (utilidades) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Tokens de diseño personalizados -->
+  <link rel="stylesheet" href="css/tokens.css">
+  
+  <!-- Archivo principal JS como módulo -->
+  <script type="module" src="js/app.js"></script>
+</head>
+<body class="bg-[#F5F7FB] text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- HEADER / HEADER PRINCIPAL -->
+  <header class="bg-white border-b border-slate-200 py-4 px-6 shadow-xs">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="bg-[#4F46E5] text-white font-bold p-2 rounded-lg text-sm">CUBRÍ</span>
+        <span class="font-bold text-lg text-slate-900">Seguros</span>
+      </div>
+      <!-- Stepper global que se oculta/muestra según el paso -->
+      <div id="stepper-container" class="hidden lg:flex items-center gap-4 text-xs"></div>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL DE LAS PANTALLAS -->
+  <main class="max-w-7xl mx-auto p-4 md:p-8 flex-1 w-full">
+
+    <!-- ================= 00. INICIO / CATÁLOGO ================= -->
+    <section data-paso="0" class="space-y-6">
+      <div class="text-center max-w-2xl mx-auto space-y-3 py-6">
+        <h1 class="text-3xl font-extrabold text-slate-900">Protegé lo que más te importa en minutos</h1>
+        <p class="text-slate-500 text-sm">Elegí un producto, cotizá online y contrata tu seguro de forma rápida y segura.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Celular (Habilitado) -->
+        <div class="card bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between shadow-xs hover:border-[#4F46E5] transition-all">
+          <div>
+            <div class="w-12 h-12 bg-[#EEF2FF] text-[#4F46E5] rounded-xl flex items-center justify-center font-bold text-xl mb-4">📱</div>
+            <h3 class="font-bold text-lg text-slate-900 mb-1">Celular</h3>
+            <p class="text-xs text-slate-500 mb-4">Protección contra robos, roturas y hurtos para tu smartphone.</p>
+          </div>
+          <button data-action="ir-paso" data-paso-target="1" class="btn w-full bg-[#4F46E5] text-white hover:bg-[#3730A3] font-semibold py-2 rounded-xl text-sm">
+            Cotizar seguro
+          </button>
+        </div>
+
+        <!-- Hogar (Próximamente) -->
+        <div class="card bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col justify-between opacity-60">
+          <div>
+            <div class="w-12 h-12 bg-slate-200 text-slate-500 rounded-xl flex items-center justify-center font-bold text-xl mb-4">🏠</div>
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="font-bold text-lg text-slate-900">Hogar</h3>
+              <span class="badge bg-slate-200 text-slate-700 text-[10px] px-2 py-0.5 rounded-full font-semibold">Próximamente</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">Cobertura integral para incendios, robos y daños en tu casa.</p>
+          </div>
+          <button disabled class="btn w-full bg-slate-200 text-slate-400 font-semibold py-2 rounded-xl text-sm cursor-not-allowed">
+            Próximamente
+          </button>
+        </div>
+
+        <!-- Bicicleta (Próximamente) -->
+        <div class="card bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col justify-between opacity-60">
+          <div>
+            <div class="w-12 h-12 bg-slate-200 text-slate-500 rounded-xl flex items-center justify-center font-bold text-xl mb-4">🚲</div>
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="font-bold text-lg text-slate-900">Bicicleta</h3>
+              <span class="badge bg-slate-200 text-slate-700 text-[10px] px-2 py-0.5 rounded-full font-semibold">Próximamente</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">Seguro contra robos en vía pública y accidentes.</p>
+          </div>
+          <button disabled class="btn w-full bg-slate-200 text-slate-400 font-semibold py-2 rounded-xl text-sm cursor-not-allowed">
+            Próximamente
+          </button>
+        </div>
+
+        <!-- Viaje (Próximamente) -->
+        <div class="card bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col justify-between opacity-60">
+          <div>
+            <div class="w-12 h-12 bg-slate-200 text-slate-500 rounded-xl flex items-center justify-center font-bold text-xl mb-4">✈️</div>
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="font-bold text-lg text-slate-900">Viaje</h3>
+              <span class="badge bg-slate-200 text-slate-700 text-[10px] px-2 py-0.5 rounded-full font-semibold">Próximamente</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">Asistencia médica y cobertura de equipaje en todo el mundo.</p>
+          </div>
+          <button disabled class="btn w-full bg-slate-200 text-slate-400 font-semibold py-2 rounded-xl text-sm cursor-not-allowed">
+            Próximamente
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= 01. COTIZAR (PASO 1) ================= -->
+    <section data-paso="1" hidden class="max-w-2xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-xs">
+      <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-900">Paso 1: Cotizá tu dispositivo</h2>
+        <p class="text-xs text-slate-500">Ingresá los datos del celular que querés asegurar.</p>
+      </div>
+
+      <form id="form-cotizar" class="space-y-4" novalidate>
+        <!-- Marca -->
+        <div role="group" class="field space-y-1">
+          <label for="marca" class="text-xs font-semibold text-slate-700">Marca</label>
+          <select id="marca" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm bg-white">
+            <option value="">Seleccioná una marca</option>
+            <option value="samsung">Samsung</option>
+            <option value="apple">Apple</option>
+            <option value="motorola">Motorola</option>
+            <option value="xiaomi">Xiaomi</option>
+          </select>
+        </div>
+
+        <!-- Modelo -->
+        <div role="group" class="field space-y-1">
+          <label for="modelo" class="text-xs font-semibold text-slate-700">Modelo</label>
+          <input id="modelo" type="text" placeholder="Ej.: Galaxy A55 / iPhone 14" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+        </div>
+
+        <!-- Valor del equipo -->
+        <div role="group" class="field space-y-1">
+          <label for="valor" class="text-xs font-semibold text-slate-700">Valor aproximado ($)</label>
+          <input id="valor" type="number" min="100000" max="2500000" placeholder="Entre 100.000 y 2.500.000" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+          <p class="text-[11px] text-slate-400">El valor debe estar entre $100.000 y $2.500.000</p>
+        </div>
+
+        <!-- Antigüedad (Opción única por radio buttons) -->
+        <div role="group" class="field space-y-2 pt-2">
+          <label class="text-xs font-semibold text-slate-700 block">Antigüedad del equipo</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="border border-slate-200 rounded-xl p-3 flex items-center gap-2 cursor-pointer hover:bg-slate-50">
+              <input type="radio" name="antiguedad" value="menos-1" class="text-[#4F46E5]">
+              <span class="text-xs font-medium text-slate-700">Menos de 1 año</span>
+            </label>
+            <label class="border border-slate-200 rounded-xl p-3 flex items-center gap-2 cursor-pointer hover:bg-slate-50">
+              <input type="radio" name="antiguedad" value="1-2" class="text-[#4F46E5]">
+              <span class="text-xs font-medium text-slate-700">1 a 2 años</span>
+            </label>
+            <label class="border border-slate-200 rounded-xl p-3 flex items-center gap-2 cursor-pointer hover:bg-slate-50">
+              <input type="radio" name="antiguedad" value="mas-2" class="text-[#4F46E5]">
+              <span class="text-xs font-medium text-slate-700">Más de 2 años</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Botones de navegación -->
+        <div class="flex justify-between items-center pt-6 border-t border-slate-100">
+          <button type="button" data-action="ir-paso" data-paso-target="0" class="btn text-slate-600 border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-50">
+            Volver
+          </button>
+          <button id="btn-ver-planes" type="submit" disabled class="btn bg-[#4F46E5] text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-[#3730A3] disabled:opacity-50 disabled:cursor-not-allowed">
+            Ver planes
+          </button>
+        </div>
+      </form>
+    </section>
+
+
+    <!-- ================= 02. ELEGIR PLAN (PASO 2) ================= -->
+    <section data-paso="2" hidden class="max-w-6xl mx-auto">
+      <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-900">Paso 2: Elegí tu plan de cobertura</h2>
+        <p class="text-xs text-slate-500">Seleccioná la opción que mejor se adapte a tus necesidades.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 items-start">
+        <!-- Planes dinámicos desde planes.json -->
+        <div id="contenedor-planes" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Se inyecta dinámicamente con JS -->
+        </div>
+
+        <!-- Resumen Lateral / Inferior -->
+        <aside class="space-y-4">
+          <div class="resumen-compra"></div>
+          <div class="flex justify-between items-center gap-4">
+            <button type="button" data-action="ir-paso" data-paso-target="1" class="btn w-1/2 text-slate-600 border border-slate-200 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-50">
+              Volver
+            </button>
+            <button type="button" data-action="ir-paso" data-paso-target="3" class="btn w-1/2 bg-[#4F46E5] text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-[#3730A3]">
+              Continuar
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- ================= 03. DATOS PERSONALES (PASO 3) ================= -->
+    <section data-paso="3" hidden class="max-w-6xl mx-auto">
+      <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-900">Paso 3: Tus datos personales</h2>
+        <p class="text-xs text-slate-500">Completá la información del titular de la póliza.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 items-start">
+        <form id="form-datos" class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-xs space-y-4" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div role="group" class="field space-y-1">
+              <label for="nombre" class="text-xs font-semibold text-slate-700">Nombre</label>
+              <input id="nombre" type="text" placeholder="Juan" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+            <div role="group" class="field space-y-1">
+              <label for="apellido" class="text-xs font-semibold text-slate-700">Apellido</label>
+              <input id="apellido" type="text" placeholder="Pérez" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div role="group" class="field space-y-1">
+              <label for="dni" class="text-xs font-semibold text-slate-700">DNI</label>
+              <input id="dni" type="text" placeholder="12345678" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+            <div role="group" class="field space-y-1">
+              <label for="nacimiento" class="text-xs font-semibold text-slate-700">Fecha de nacimiento</label>
+              <input id="nacimiento" type="date" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div role="group" class="field space-y-1">
+              <label for="email" class="text-xs font-semibold text-slate-700">Email</label>
+              <input id="email" type="email" placeholder="juan.perez@email.com" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+            <div role="group" class="field space-y-1">
+              <label for="celular" class="text-xs font-semibold text-slate-700">Celular</label>
+              <input id="celular" type="tel" placeholder="11 5555 1234" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+          </div>
+
+          <!-- Checkbox Términos -->
+          <div role="group" class="field pt-2 flex items-center gap-2">
+            <input id="terminos" type="checkbox" class="w-4 h-4 text-[#4F46E5] rounded-sm">
+            <label for="terminos" class="text-xs text-slate-600 select-none">Acepto los términos y condiciones y las políticas de privacidad</label>
+          </div>
+
+          <!-- Botones -->
+          <div class="flex justify-between items-center pt-6 border-t border-slate-100">
+            <button type="button" data-action="ir-paso" data-paso-target="2" class="btn text-slate-600 border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-50">
+              Volver
+            </button>
+            <button id="btn-continuar-pago" type="submit" disabled class="btn bg-[#4F46E5] text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-[#3730A3] disabled:opacity-50 disabled:cursor-not-allowed">
+              Continuar al pago
+            </button>
+          </div>
+        </form>
+
+        <!-- Resumen Lateral -->
+        <aside class="space-y-4">
+          <div class="resumen-compra"></div>
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- ================= 04. PAGO (PASO 4) ================= -->
+    <section data-paso="4" hidden class="max-w-6xl mx-auto">
+      <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-900">Paso 4: Método de pago</h2>
+        <p class="text-xs text-slate-500">Ingresá los datos de tu tarjeta de crédito o débito.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 items-start">
+        <form id="form-pago" class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-xs space-y-4" novalidate>
+          <div role="group" class="field space-y-1">
+            <label for="tarjeta" class="text-xs font-semibold text-slate-700">Número de tarjeta</label>
+            <input id="tarjeta" type="text" placeholder="4111 1111 1111 1111" maxlength="19" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div role="group" class="field space-y-1">
+              <label for="vencimiento" class="text-xs font-semibold text-slate-700">Vencimiento (MM/AA)</label>
+              <input id="vencimiento" type="text" placeholder="12/28" maxlength="5" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+            <div role="group" class="field space-y-1">
+              <label for="cvv" class="text-xs font-semibold text-slate-700">CVV</label>
+              <input id="cvv" type="password" placeholder="123" maxlength="3" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+            </div>
+          </div>
+
+          <div role="group" class="field space-y-1">
+            <label for="titular-pago" class="text-xs font-semibold text-slate-700">Nombre del titular</label>
+            <input id="titular-pago" type="text" placeholder="Como figura en la tarjeta" class="w-full border border-slate-200 rounded-xl p-2.5 text-sm">
+          </div>
+
+          <!-- Alerta informativa de prueba -->
+          <div class="alert bg-[#EEF2FF] border border-[#4F46E5]/20 text-[#3730A3] p-3 rounded-xl text-xs space-y-1">
+            <p class="font-bold">💡 Tarjetas de prueba:</p>
+            <p>• Aprobada: <code class="bg-white px-1 py-0.5 rounded">4111 1111 1111 1111</code></p>
+            <p>• Rechazada: <code class="bg-white px-1 py-0.5 rounded">4000 0000 0000 0002</code></p>
+          </div>
+
+          <div class="flex justify-between items-center pt-6 border-t border-slate-100">
+            <button type="button" data-action="ir-paso" data-paso-target="3" class="btn text-slate-600 border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-slate-50">
+              Volver
+            </button>
+            <button id="btn-pagar" type="submit" class="btn bg-[#4F46E5] text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-[#3730A3]">
+              Pagar y contratar
+            </button>
+          </div>
+        </form>
+
+        <!-- Resumen Lateral -->
+        <aside class="space-y-4">
+          <div class="resumen-compra"></div>
+        </aside>
+      </div>
+    </section>
+
+
+    <!-- ================= 05. ÉXITO (PASO 5) ================= -->
+    <section data-paso="5" hidden class="max-w-xl mx-auto bg-white border border-slate-200 rounded-2xl p-8 text-center space-y-6 shadow-xs">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto font-bold">✓</div>
+      <div class="space-y-2">
+        <h2 class="text-2xl font-extrabold text-slate-900">¡Contratación exitosa!</h2>
+        <p class="text-xs text-slate-500">Tu póliza ha sido generada correctamente.</p>
+      </div>
+
+      <div class="bg-[#F5F7FB] p-4 rounded-xl text-left space-y-2 text-xs">
+        <div class="flex justify-between"><span class="text-slate-500">Número de Póliza:</span> <span id="exito-poliza" class="font-bold text-slate-900"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Titular:</span> <span id="exito-nombre" class="font-semibold text-slate-900"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Email de envío:</span> <span id="exito-email" class="font-semibold text-slate-900"></span></div>
+      </div>
+
+      <button data-action="volver-inicio" class="btn w-full bg-[#4F46E5] text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-[#3730A3]">
+        Volver al inicio
+      </button>
+    </section>
+
+
+    <!-- ================= 06. ERROR DE PAGO (PASO 6) ================= -->
+    <section data-paso="6" hidden class="max-w-xl mx-auto bg-white border border-red-200 rounded-2xl p-8 text-center space-y-6 shadow-xs">
+      <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-3xl mx-auto font-bold">✕</div>
+      <div class="space-y-2">
+        <h2 class="text-2xl font-extrabold text-slate-900">No pudimos procesar tu pago</h2>
+        <p class="text-xs text-slate-500">La tarjeta ingresada fue rechazada por la entidad emisora.</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 pt-4">
+        <button data-action="ir-paso" data-paso-target="4" class="btn flex-1 bg-[#4F46E5] text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-[#3730A3]">
+          Reintentar pago
+        </button>
+        <button data-action="ir-paso" data-paso-target="4" class="btn flex-1 text-slate-600 border border-slate-200 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-50">
+          Cambiar medio de pago
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-400">
+    <p>Diseño UXUI - 2026 - Licenciatura en Sistemas de Información</p>
+  </footer>
+
+</body>
+</html>
